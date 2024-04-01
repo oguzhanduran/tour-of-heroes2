@@ -4,17 +4,18 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { NgFor } from '@angular/common';
 import { MessageService } from '../message.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
-  imports: [HeroDetailComponent, NgFor],
+  imports: [HeroDetailComponent, NgFor, RouterLink],
 })
 export class HeroesComponent {
 
-  selectedHero?: Hero;
+  // selectedHero?: Hero;
 
   heroes: Hero[] = [];
 
@@ -24,10 +25,10 @@ export class HeroesComponent {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+  // }
 
   getHeroes(): void {
     this.heroService.getHeroes()
