@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
-import { NgFor } from '@angular/common';
-import { MessageService } from '../message.service';
+import { Hero } from '../../hero';
+import { HeroService } from '../../services/heroService/hero.service';
+import { MessageService } from '../../services/messageService/message.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -11,7 +10,7 @@ import { RouterLink } from '@angular/router';
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
-  imports: [HeroDetailComponent, NgFor, RouterLink],
+  imports: [HeroDetailComponent, RouterLink],
 })
 export class HeroesComponent {
 
